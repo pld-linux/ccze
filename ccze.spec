@@ -5,11 +5,9 @@ Version:	0.2.1
 Release:	1
 Epoch:		1
 License:	GPL
-Group:		Aplikacje/Tekst
-######		Unknown group!
-Vendor:		PLD
+Group:		Applications/Text
 Source0:	ftp://bonehunter.rulez.org/pub/ccze/stable/%{name}-%{version}.tar.gz
-# Source-md5:	221966bce7c5f011eca38157241a0432
+# Source0-md5:	221966bce7c5f011eca38157241a0432
 URL:		http://bonehunter.rulez.org/CCZE.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -28,6 +26,20 @@ systemowych, ftp, www i mail. Posiada wtyczki, mo¿e korzystaæ z plików
 konfiguracyjnych, umie generowaæ wyniki w postaci kolorowej strony
 html.
 
+%package devel
+Summary:	Header file for CCZE plugins
+Summary(pl):	Plik nag³ówkowy dla wtyczek CCZE
+Group:		Development/Libraries
+Requires:	ncurses-devel >= 5.0
+Requires:	pcre-devel >= 3.1
+# doesn't require base
+
+%description devel
+Header file for CCZE plugins.
+
+%description devel -l pl
+Plik nag³ówkowy dla wtyczek CCZE.
+
 %prep
 %setup -q
 
@@ -35,15 +47,20 @@ html.
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
-%configure --with-builtins=all
+CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+%configure \
+	--with-builtins=all
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_sysconfdir}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_sysconfdir}
-src/ccze-dump >%{buildroot}/%{_sysconfdir}/cczerc
+
+src/ccze-dump >$RPM_BUILD_ROOT%{_sysconfdir}/cczerc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -51,10 +68,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog ChangeLog-0.1 NEWS README THANKS FAQ
-%config %{_sysconfdir}/cczerc
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/cczerc
 %attr(755,root,root) %{_bindir}/ccze
 %attr(755,root,root) %{_bindir}/ccze-cssdump
-%{_includedir}/ccze.h
 %{_mandir}/man1/ccze.1*
 %{_mandir}/man1/ccze-cssdump.1*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/ccze.h
 %{_mandir}/man7/ccze-plugin.7*
