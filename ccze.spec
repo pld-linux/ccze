@@ -11,6 +11,8 @@ Vendor:		PLD
 Source0:	ftp://bonehunter.rulez.org/pub/ccze/stable/%{name}-%{version}.tar.gz
 # Source-md5:	221966bce7c5f011eca38157241a0432
 URL:		http://bonehunter.rulez.org/CCZE.html
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,6 +32,9 @@ html.
 %setup -q
 
 %build
+%{__aclocal}
+%{__autoheader}
+%{__autoconf}
 %configure --with-builtins=all
 %{__make}
 
