@@ -22,7 +22,7 @@ vsftpd, xferlog and more.
 
 %description -l pl
 CCZE jest programem napisanym w C. Umo¿liwia kolorowanie logów
-systemowych, ftp, www i mail. Posiada wtyczki, mo¿e korzystaæ z plików
+systemowych, FTP, WWW i mail. Posiada wtyczki, mo¿e korzystaæ z plików
 konfiguracyjnych, umie generowaæ wyniki w postaci kolorowej strony
 html.
 
