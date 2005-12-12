@@ -68,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog ChangeLog-0.1 NEWS README THANKS FAQ
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/cczerc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/cczerc
 %attr(755,root,root) %{_bindir}/ccze
 %attr(755,root,root) %{_bindir}/ccze-cssdump
 %{_mandir}/man1/ccze.1*
