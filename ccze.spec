@@ -1,5 +1,5 @@
 Summary:	A robust log colorizer
-Summary(pl):	Program w C do kolorowania logÛw
+Summary(pl.UTF-8):   Program w C do kolorowania log√≥w
 Name:		ccze
 Version:	0.2.1
 Release:	1
@@ -20,15 +20,15 @@ CCZE is a roboust and modular log colorizer, with plugins for apm,
 exim, fetchmail, httpd, postfix, procmail, squid, syslog, ulogd,
 vsftpd, xferlog and more.
 
-%description -l pl
-CCZE jest programem napisanym w C. Umoøliwia kolorowanie logÛw
-systemowych, FTP, WWW i mail. Posiada wtyczki, moøe korzystaÊ z plikÛw
-konfiguracyjnych, umie generowaÊ wyniki w postaci kolorowej strony
+%description -l pl.UTF-8
+CCZE jest programem napisanym w C. Umo≈ºliwia kolorowanie log√≥w
+systemowych, FTP, WWW i mail. Posiada wtyczki, mo≈ºe korzystaƒá z plik√≥w
+konfiguracyjnych, umie generowaƒá wyniki w postaci kolorowej strony
 html.
 
 %package devel
 Summary:	Header file for CCZE plugins
-Summary(pl):	Plik nag≥Ûwkowy dla wtyczek CCZE
+Summary(pl.UTF-8):   Plik nag≈Ç√≥wkowy dla wtyczek CCZE
 Group:		Development/Libraries
 Requires:	ncurses-devel >= 5.0
 Requires:	pcre-devel >= 3.1
@@ -37,8 +37,8 @@ Requires:	pcre-devel >= 3.1
 %description devel
 Header file for CCZE plugins.
 
-%description devel -l pl
-Plik nag≥Ûwkowy dla wtyczek CCZE.
+%description devel -l pl.UTF-8
+Plik nag≈Ç√≥wkowy dla wtyczek CCZE.
 
 %prep
 %setup -q
