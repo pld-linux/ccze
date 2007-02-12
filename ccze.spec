@@ -1,5 +1,5 @@
 Summary:	A robust log colorizer
-Summary(pl.UTF-8):   Program w C do kolorowania logów
+Summary(pl.UTF-8):	Program w C do kolorowania logów
 Name:		ccze
 Version:	0.2.1
 Release:	1
@@ -28,7 +28,7 @@ html.
 
 %package devel
 Summary:	Header file for CCZE plugins
-Summary(pl.UTF-8):   Plik nagłówkowy dla wtyczek CCZE
+Summary(pl.UTF-8):	Plik nagłówkowy dla wtyczek CCZE
 Group:		Development/Libraries
 Requires:	ncurses-devel >= 5.0
 Requires:	pcre-devel >= 3.1
