@@ -1,0 +1,10 @@
+--- ./configure.ac.org	2011-06-09 17:48:59.884939619 +0200
++++ ./configure.ac	2011-06-09 17:51:52.126202394 +0200
+@@ -100,6 +100,7 @@ AC_CHECK_FUNCS([alphasort argp_parse asp
+ 		strndup strstr])
+ 
+ AC_CHECK_LIB(ncurses, initscr, [], [AC_ERROR(NCurses library not found)])
++AC_CHECK_LIB(tinfo, stdscr, [], [AC_ERROR(TInfo library not found)])
+ AC_CHECK_FUNC(dlopen, [], [AC_CHECK_LIB(dl, dlopen)])
+ AC_CHECK_FUNC(getopt_long, [], [AC_CHECK_LIB(gnugetopt, getopt_long)])
+ 

@@ -1,0 +1,10 @@
+--- ./configure.ac.org	2003-05-13 20:09:30.000000000 +0200
++++ ./configure.ac	2011-06-09 17:47:07.763111535 +0200
+@@ -84,7 +84,6 @@ AC_C_VOLATILE
+ AC_TYPE_SIZE_T
+ AC_TYPE_SIGNAL
+ 
+-AC_CHECK_TYPE(error_t, int)
+ 
+ dnl **********************
+ dnl * Library functions

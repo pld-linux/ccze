@@ -1,19 +1,29 @@
+# TODO:
+# - fix outdated url
 Summary:	A robust log colorizer
 Summary(pl.UTF-8):	Program w C do kolorowania logów
 Name:		ccze
 Version:	0.2.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://bonehunter.rulez.org/pub/ccze/stable/%{name}-%{version}.tar.gz
 # Source0-md5:	221966bce7c5f011eca38157241a0432
+Patch0:		%{name}-ldflags.patch
+Patch1:		%{name}-segfault.patch
+Patch2:		%{name}-fbsd.patch
+Patch3:		%{name}-Wmulticharacter.patch
+Patch4:		%{name}-error.patch
+Patch5:		%{name}-tinfo.patch
 URL:		http://bonehunter.rulez.org/CCZE.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+#define		filterout_ld	-Wl,--as-needed
 
 %description
 CCZE is a roboust and modular log colorizer, with plugins for apm,
@@ -42,6 +52,12 @@ Plik nagłówkowy dla wtyczek CCZE.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p0
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
 
 %build
 %{__aclocal}
