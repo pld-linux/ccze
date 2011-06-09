@@ -4,7 +4,7 @@ Summary:	A robust log colorizer
 Summary(pl.UTF-8):	Program w C do kolorowania logów
 Name:		ccze
 Version:	0.2.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Applications/Text
@@ -16,6 +16,7 @@ Patch2:		%{name}-fbsd.patch
 Patch3:		%{name}-Wmulticharacter.patch
 Patch4:		%{name}-error.patch
 Patch5:		%{name}-tinfo.patch
+Patch6:		%{name}-debian.patch
 URL:		http://bonehunter.rulez.org/CCZE.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -58,6 +59,7 @@ Plik nagłówkowy dla wtyczek CCZE.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 %{__aclocal}
