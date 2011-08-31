@@ -4,7 +4,7 @@ Summary:	A robust log colorizer
 Summary(pl.UTF-8):	Program w C do kolorowania logów
 Name:		ccze
 Version:	0.2.1
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Applications/Text
